@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="interfaceFlow" doc:id="1bf99919-ce57-4184-97fa-01888f4b165c" >
+		<scheduler doc:name="Scheduler" doc:id="5e1ebed7-1789-456f-8e94-df68a7875c52" >
+			<scheduling-strategy >
+				<fixed-frequency frequency="10" timeUnit="MINUTES"/>
+			</scheduling-strategy>
+		</scheduler>
+		<set-payload value="payload from test branch" doc:name="Set Payload" doc:id="b7a0f842-f36e-472c-9d3f-15a116f1eb4f" />
+		<logger level="INFO" doc:name="Logger" doc:id="c3b14434-7b23-4b80-9e46-ba49026b7ff4" message="#[paylaod]"/>
+	</flow>
+</mule>
